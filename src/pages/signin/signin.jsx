@@ -44,12 +44,11 @@ const SignIn = (props) => {
   }
 
   const validationSchema = Yup.object().shape({
+    email: Yup.string()
+    .required(function () { SpawnSnackBar('Email is required') } )
+    .email(function () { SpawnSnackBar('Email is invalid') }),
     name: Yup.string()
       .required( function () { SpawnSnackBar('name is required') } ),
-    email: Yup.string()
-      .required(function () { SpawnSnackBar('Email is required') } )
-      .email(function () { SpawnSnackBar('Email is invalid') }),
-    
     DoB: Yup.date().default(() => new Date()),
   });
 
@@ -103,11 +102,12 @@ const SignIn = (props) => {
                 display: 'flex',
                 flexDirection: 'column',
                 alignItems: 'center',
+                
               }}>
 
         <Avatar sx={{height: 100, width: 100}}></Avatar>
         
-        <Box component="form" noValidate sx={{ mt: 1 }}>
+        <Box component="form" noValidate sx={{ mt: 1}} classes={'sign-in-form'}>
           <div>
             <FormLabel ><strong>NAME <span className="required">*</span></strong></FormLabel>
             <TextField
