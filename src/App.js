@@ -3,6 +3,7 @@ import './App.css';
 import { Routes, Route, Navigate  } from 'react-router-dom'
 
 import React from 'react';
+import { makeStyles } from "@material-ui/core/styles";
 
 import SignIn from './pages/signin/signin'
 import Home from './pages/home-page/home-page.component';
@@ -13,6 +14,7 @@ import { useSelector } from 'react-redux'
 import { selectUser } from "./redux/features/userSlice"
 
 function App(props) {
+  
 
   const user = useSelector(selectUser)
   console.log("user", user)
@@ -37,10 +39,7 @@ function App(props) {
     <div className="App">
 
     <Routes>
-        <Route exact path='/signin' element={ 
-            user ? (<Navigate to='/'/>) :  
-            <SignIn/>
-          }/>
+        <Route exact path='/signin' element={ user ? (<Navigate to='/'/>) : <SignIn/> }/>
         <Route exact path='/' element={ user ? <Home posts={posts}/> : (<Navigate to='/signin'/>)}/>
         <Route path='/addpost' element={<AddPost posts={posts}/>}/>
     </Routes>

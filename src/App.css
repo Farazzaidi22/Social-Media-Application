@@ -1,4 +1,10 @@
 
+
+.App{
+  font-family: 'Poppins', sans-serif;
+  color: #442445;
+}
+
 .mt-10{
   margin-top: 10px ;
 }

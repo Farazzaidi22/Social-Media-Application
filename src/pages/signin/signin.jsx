@@ -109,7 +109,7 @@ const SignIn = (props) => {
         
         <Box component="form" noValidate sx={{ mt: 1 }}>
           <div>
-            <FormLabel component="legend" color="secondary"><strong>NAME <span className="required">*</span></strong></FormLabel>
+            <FormLabel ><strong>NAME <span className="required">*</span></strong></FormLabel>
             <TextField
                placeholder='Enter your name'
               required
@@ -126,7 +126,7 @@ const SignIn = (props) => {
 
 
             <div>
-              <FormLabel component="legend" color="secondary"><strong>EMAIL <span className="required">*</span></strong></FormLabel>
+              <FormLabel ><strong>EMAIL <span className="required">*</span></strong></FormLabel>
               <TextField
                 placeholder='Enter your email'
                 required
@@ -142,7 +142,7 @@ const SignIn = (props) => {
             </div>
 
             <div>
-              <FormLabel component="legend" color="secondary"><strong>DATE OF BIRTH <span className="required">*</span></strong></FormLabel>
+              <FormLabel ><strong>DATE OF BIRTH <span className="required">*</span></strong></FormLabel>
               <LocalizationProvider  dateAdapter={AdapterDateFns}>
                 {/* <DatePicker
                   id="DoB"
