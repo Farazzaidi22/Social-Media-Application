@@ -39,9 +39,9 @@ function App(props) {
     <div className="App">
 
     <Routes>
-        <Route exact path='/signin' element={ user ? (<Navigate to='/'/>) : <SignIn/> }/>
-        <Route exact path='/' element={ user ? <Home posts={posts}/> : (<Navigate to='/signin'/>)}/>
-        <Route path='/addpost' element={<AddPost posts={posts}/>}/>
+        <Route exact path='/signin' element={ user ? (<Navigate to='/'/>) : <SignIn/>}/>
+        <Route exact path='/'  element={ user ? <Home posts={posts}/> : (<Navigate to='/signin'/>)}/>
+        <Route path='/addpost' element={user ? <AddPost posts={posts}/> : (<Navigate to='/signin'/>)}/>
     </Routes>
 
     </div>
